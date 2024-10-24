@@ -1,15 +1,18 @@
-// src/components/LandingPage.js
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const LandingPage = () => {
+const LandingPage = ({ navigation }) => {
+  const handlePress = () => {
+    navigation.navigate('SignIn'); // Navigate to the Sign In screen
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
         <Text style={styles.title}>Hotel</Text>
-        <View style={styles.hubContainer}>
+        <TouchableOpacity style={styles.hubButton} onPress={handlePress}>
           <Text style={styles.hubText}>Hub</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -20,30 +23,29 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0000FF', 
-    // Blue background
+    backgroundColor: '#0000FF', // Blue background
   },
   innerContainer: {
-    backgroundColor: '#FFFFFF', // White background for the container
-    borderRadius: 15, // Rounded edges
-    padding: 20, // Padding inside the container
+    backgroundColor: '#FFFFFF',
+    borderRadius: 15,
+    padding: 20,
     alignItems: 'center',
-    width:150
+    width: 150,
   },
   title: {
     fontSize: 32,
-    fontWeight: 'bold', // Bold text
-    color: 'black', // Black text color
-    marginBottom: 10, 
+    fontWeight: 'bold',
+    color: 'black',
+    marginBottom: 10,
   },
-  hubContainer: {
-    backgroundColor: 'black', // Black background for "Hub" container
-    borderRadius: 10, // Rounded edges for the "Hub" container
-    padding: 10, // Padding inside the "Hub" container
+  hubButton: {
+    backgroundColor: 'black',
+    borderRadius: 10,
+    padding: 10,
   },
   hubText: {
     fontSize: 24,
-    color: 'white', // White text color for "Hub"
+    color: 'white',
   },
 });
 

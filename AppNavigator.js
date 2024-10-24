@@ -1,8 +1,9 @@
-// src/AppNavigator.js
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LandingPage from './components/LandingPage'; // Import LandingPage
+import LandingPage from './components/LandingPage';
+import SignIn from './components/SignIn'; // Import SignIn component
+import HomePage from './components/HomePage'; // Import HomePage component
 
 const Stack = createStackNavigator();
 
@@ -12,10 +13,19 @@ const AppNavigator = () => {
       <Stack.Navigator initialRouteName="Landing">
         <Stack.Screen
           name="Landing"
-          component={LandingPage} // Set LandingPage as the first screen
-          options={{ headerShown: false }} 
+          component={LandingPage}
+          options={{ headerShown: false }}
         />
-        {/* You can add more screens here */}
+        <Stack.Screen
+          name="SignIn"
+          component={SignIn}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={HomePage}
+          options={{ headerShown: false }} // Hide header for HomePage
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
