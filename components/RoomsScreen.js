@@ -12,11 +12,15 @@ const availableRooms = [
 // Sample data for occupied rooms
 const occupiedRooms = [
   { id: '4', name: 'Presidential Suite', price: 300, discount: 0 },
+  { id: '2', name: 'Suite Room', price: 200, discount: 50 },
+  { id: '3', name: 'Standard Room', price: 80, discount: 10 },
 ];
 
 // Sample data for discounted rooms
 const discountedRooms = [
   { id: '5', name: 'Economy Room', price: 60, discount: 15 },
+  { id: '2', name: 'Suite Room', price: 200, discount: 50 },
+  { id: '3', name: 'Standard Room', price: 80, discount: 10 },
 ];
 
 const RoomsScreen = () => {
@@ -48,6 +52,7 @@ const RoomsScreen = () => {
 
   return (
     <View style={styles.screen}>
+
       <Text style={styles.subTitle}>Discounted Rooms</Text>
       {renderRoomList(discountedRooms)}
 
@@ -63,8 +68,8 @@ const RoomsScreen = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 16,
-    backgroundColor: 'orange', // Background color for the screen
+    padding: 8,
+    backgroundColor:'orange'
   },
   title: {
     fontSize: 24,
@@ -77,45 +82,39 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 16,
     marginBottom: 8,
-    color: '#000', // Make subtitle text color black for better visibility
   },
   roomContainer: {
     padding: 16,
     marginHorizontal: 8, // Space between room items
+    backgroundColor: '#f9f9f9',
     borderRadius: 8,
     elevation: 2,
     width: 200, // Set a fixed width for horizontal alignment
-    height: 300,
-    justifyContent: 'flex-end',
-    backgroundColor: '#ffffff', // Set background color to white for room containers
   },
   roomName: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 8, // Add some space below the room name
-    color: '#000', // Make room name text color black for better visibility
   },
   roomPrice: {
     fontSize: 16,
-    color: '#4caf50', // Green color for price
-    marginBottom: 4, // Add some space below the price
+    color: '#4caf50',
   },
   roomDiscount: {
     fontSize: 14,
-    color: '#f44336', // Red color for discount
-    marginBottom: 10, // Add space before the button
+    color: '#f44336',
   },
   roomList: {
     paddingVertical: 8,
   },
   button: {
+    marginTop: -1,
     padding: 10,
     backgroundColor: '#ff9800', // Orange color for button
     borderRadius: 5,
     alignItems: 'center',
   },
   buttonText: {
-    color: '#ffffff', // White text color for button
+    color: '#ffffff',
     fontWeight: 'bold',
   },
 });

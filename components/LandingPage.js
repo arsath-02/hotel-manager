@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0000FF', // Blue background
+    backgroundColor: 'orange', // Blue background
   },
   innerContainer: {
     backgroundColor: '#FFFFFF',
