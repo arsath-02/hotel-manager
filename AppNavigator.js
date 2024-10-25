@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import LandingPage from './components/LandingPage';
-import SignIn from './components/SignIn'; // Import SignIn component
-import HomePage from './components/HomePage'; // Import HomePage component
+import SignIn from './components/SignIn';
+import HomePage from './components/HomePage';
+import Home from './components/sameer/Navigation';
 
 const Stack = createStackNavigator();
 
@@ -22,9 +24,14 @@ const AppNavigator = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Home"
+          name="HomePage" // Client home page
           component={HomePage}
-          options={{ headerShown: false }} // Hide header for HomePage
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home" // Staff home page
+          component={Home}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

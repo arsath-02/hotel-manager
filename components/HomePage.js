@@ -9,12 +9,6 @@ import FoodScreen from './FoodScreen';
 import CustomerCareScreen from './CustomerCareScreen';
 import DashboardScreen from './DashboardScreen';
 const Tab = createBottomTabNavigator();
-
-
-
-
-
-
 const HomePage = () => {
   return (
     <Tab.Navigator>

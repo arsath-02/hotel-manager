@@ -6,16 +6,21 @@ const SignInPage = ({ navigation }) => {
     console.log("Google Sign-In pressed");
   };
 
-  const handleNextComponent = () => {
-    navigation.navigate('Home'); // Navigate to HomePage
+  const handleClientLogin = () => {
+    navigation.navigate('HomePage'); // Navigate to HomePage for clients
+  };
+
+  const handleStaffLogin = () => {
+    navigation.navigate('Home'); // Navigate to Home for staff
   };
 
   return (
     <View style={styles.container}>
-      {/* Remove title if you want */}
       <Button title="Sign in with Google" color="#FFA500" onPress={handleGoogleSignIn} />
       <View style={styles.spacer} />
-      <Button title="Go to Home Page" color="#FFA500" onPress={handleNextComponent} />
+      <Button title="Sign in as Client" color="#FFA500" onPress={handleClientLogin} />
+      <View style={styles.spacer} />
+      <Button title="Login as Staff" color="#FFA500" onPress={handleStaffLogin} />
     </View>
   );
 };
@@ -27,7 +32,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   spacer: {
-    height: 20, // Adjust spacing as needed
+    height: 20,
   },
 });
 
